@@ -1,0 +1,21 @@
+.nav-bar {
+    display: flex;
+    align-items: center;
+    background-color: #21222A;
+    height: 100px;
+    padding: 10px 30px;
+}
+
+.react-logo {
+    width: 70px;
+}
+
+.nav-title {
+    margin-left: 10px;
+    color: #61DAFB;
+    font-family: Inter;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 100%;
+    letter-spacing: -5%;
+}
