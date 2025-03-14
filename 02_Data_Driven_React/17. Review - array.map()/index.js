@@ -6,8 +6,9 @@ const nums = [1, 2, 3, 4, 5]
 // -->       [1, 4, 9, 16, 25]
 // Your code here
 
+const resNums = nums.map(num => num * num);
 
-
+console.log(resNums);
 
 /*
 Challenge 2:
@@ -19,7 +20,9 @@ const names = ["alice", "bob", "charlie", "danielle"]
 // -->        ["Alice", "Bob", "Charlie", "Danielle"]
 // Your code here
 
+const resNames = names.map(name => name[0].toUpperCase().concat(name.slice(1)));
 
+console.log(resNames);
 
 
 /*
@@ -31,8 +34,10 @@ E.g. given: ["Bulbasaur", "Charmander", "Squirtle"]
 return: ["<p>Bulbasaur</p>", "<p>Charmander</p>", "<p>Squirtle</p>"]
 */
 
-const pokemon = ["Bulbasaur", "Charmander", "Squirtle"]
+const pokemons = ["Bulbasaur", "Charmander", "Squirtle"]
 // -->          ["<p>Bulbasaur</p>", "<p>Charmander</p>", "<p>Squirtle</p>"]
 // Your code here
 
+const newPokemons = pokemons.map(pokemon => `<p>${pokemon}</p>`);
 
+console.log(newPokemons);
