@@ -3,7 +3,7 @@ import marker from '../assets/marker.png'
 
 import './css/Entry.css'
 export default function Entry(props) {
-    const { img, country, googleMapsLink, title, dates, text } = props;
+    const { img, country, googleMapsLink, title, dates, text } = props.item;
     const { src, alt } = img;
     return (
         <article className='japan-content'>
