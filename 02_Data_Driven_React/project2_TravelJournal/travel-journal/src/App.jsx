@@ -7,6 +7,7 @@ export default function App() {
     const items = data.map((item) => {
         const { id, img, title, country, googleMapsLink, dates, text } = item;
         return (<Entry
+            key={id}
             img={img}
             country={country}
             googleMapsLink={googleMapsLink}
