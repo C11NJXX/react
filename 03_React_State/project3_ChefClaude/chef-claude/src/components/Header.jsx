@@ -3,8 +3,10 @@ import './css/Header.css'
 export default function Header() {
     return (
         <header className='header'>
-            <img src={icon} alt="chef-icon" className='header-icon'/>
-            <span className='header-title'>Chef Claude</span>
+            <div className="header-container">
+                <img src={icon} alt="chef-icon" className='header-icon' />
+                <span className='header-title'>Chef Claude</span>
+            </div>
         </header>
     )
 }
