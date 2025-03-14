@@ -8,7 +8,7 @@ export default function App() {
         const { id }= item;
         return (<Entry
             key={id}
-            item={item}
+            {...item}
         />)
     });
     return (
