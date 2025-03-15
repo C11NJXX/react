@@ -3,14 +3,14 @@ import { useState } from 'react'
 export default function Main() {
     const [ingredients, setIngredients] = useState([]);
     const ingredientListItems = ingredients.map((ingredient, index) => (<li key={index}>{ingredient}</li>));
-    function handleSubmit(event) {
-        event.preventDefault();
-        const newIngredient = new FormData(event.currentTarget).get('ingredient');
-        setIngredients(prevIngredients => [...prevIngredients, newIngredient]);
+
+    function addIngredient(formData) {
+        setIngredients(prevIngredients => [...prevIngredients, formData.get('ingredient')]);
     }
+
     return (
         <main>
-            <form className="add-bar" onSubmit={handleSubmit}>
+            <form className="add-bar" action={addIngredient}>
                 <input className='add-bar-input' type='text' name="ingredient" placeholder="e.g. oregano" aria-label='Add ingredient' />
                 <button className='add-bar-button'>Add ingredient</button>
             </form>
