@@ -1,4 +1,5 @@
 import React from "react"
+import Count from "./components/Count"
 
 export default function App() {
     const [count, setCount] = React.useState(0)
@@ -10,20 +11,6 @@ export default function App() {
     function subtract() {
         setCount(prevCount => prevCount - 1)
     }
-    
-    /**
-     * Challenge:
-     * - Create a new component called `Count`
-     *    - It should receive a prop called `number`, whose value
-     *      is the current value of our count
-     *    - Have the component render the h2.count element below
-     *      and display the incoming prop `number`
-     * - Replace the h2.count below with an instance of
-     *   the new Count component, passing the correct value
-     *   to its `number` prop.
-     * - After doing this, everything should be working the
-     *   same as before.
-     */
 
     return (
         <main className="container">
@@ -33,9 +20,7 @@ export default function App() {
                     onClick={subtract}
                     aria-label="Decrease count"
                 >-</button>
-
-                <h2 className="count">{count}</h2>
-
+                <Count count={count} />
                 <button
                     className="plus"
                     onClick={add}
