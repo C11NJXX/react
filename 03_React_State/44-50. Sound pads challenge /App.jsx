@@ -5,7 +5,7 @@ export default function App({ darkMode }) {
     const [buttons, setButtons] = useState(pads);
     const buttonItems = buttons.map(
         buttonItem =>
-            <Pad color={buttonItem.color} key={buttonItem.id}/>);
+            <Pad color={buttonItem.color} key={buttonItem.id} on={buttonItem.on}/>);
 
     return (
         <main>
