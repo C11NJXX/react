@@ -5,9 +5,13 @@ export default function App({ darkMode }) {
     const [buttons, setButtons] = useState(pads);
     const buttonItems = buttons.map(
         buttonItem =>
-            <Pad color={buttonItem.color} key={buttonItem.id} on={buttonItem.on} toggle={toggle}/>);
-    function toggle() {
-        console.log('clicked!');
+            <Pad id={buttonItem.id} color={buttonItem.color} key={buttonItem.id} on={buttonItem.on} toggle={toggle} />);
+    function toggle(id) {
+        setButtons(prevButtons => {
+            return prevButtons.map((prevButton) => {
+                return (prevButton.id === id) ? { ...prevButton, on: !prevButton.on } : prevButton
+            });
+        });
     }
     return (
         <main>

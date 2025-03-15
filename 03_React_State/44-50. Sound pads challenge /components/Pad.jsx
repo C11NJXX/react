@@ -1,14 +1,13 @@
-import { useState } from "react"
-export default function Pad({ color, on, toggle }) {
-    const [isOn, setIsOn] = useState(on);
-    
+export default function Pad({ id, color, on, toggle }) {
     return (
         <button
             style={{
                 backgroundColor: color
             }}
-            className={isOn ? 'on' : undefined}
-            onClick={toggle}>
+            className={on ? 'on' : undefined}
+            onClick={() => {
+                toggle(id)
+            }}>
         </button>
     )
 }
