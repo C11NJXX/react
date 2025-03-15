@@ -5,8 +5,10 @@ export default function App({ darkMode }) {
     const [buttons, setButtons] = useState(pads);
     const buttonItems = buttons.map(
         buttonItem =>
-            <Pad color={buttonItem.color} key={buttonItem.id} on={buttonItem.on}/>);
-
+            <Pad color={buttonItem.color} key={buttonItem.id} on={buttonItem.on} toggle={toggle}/>);
+    function toggle() {
+        console.log('clicked!');
+    }
     return (
         <main>
             <div className="pad-container">
