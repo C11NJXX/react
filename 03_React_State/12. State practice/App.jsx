@@ -9,13 +9,11 @@ export default function App() {
     const [count, setCount] = React.useState(0);
 
     function handleMinus() {
-        if (count > 0) {
-            setCount(count - 1);
-        };
+        setCount(prevCount => (prevCount > 0) ? (prevCount - 1) : prevCount)
     };
 
     function handlePlus() {
-        setCount(count + 1);
+        setCount(prevCount => prevCount + 1)
     };
 
     return (
@@ -28,4 +26,4 @@ export default function App() {
             </div>
         </main>
     )
-}
+}    
