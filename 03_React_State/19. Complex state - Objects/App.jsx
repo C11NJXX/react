@@ -9,16 +9,16 @@ export default function App() {
         lastName: "Doe",
         phone: "+1 (212) 555-1212",
         email: "itsmyrealname@example.com",
-        isFavorite: true
+        isFavorite: false
     })
-    /**
-     * Challenge: Fill in the values in the markup
-     * using the properties of our state object above
-     * (Ignore `isFavorite` for now)
-     */
 
     function toggleFavorite() {
-        console.log("Toggle Favorite")
+        setContact(prevContact => {
+            return {
+                ...prevContact,
+                isFavorite: !prevContact.isFavorite
+            }
+        })
     }
 
     return (
@@ -33,12 +33,12 @@ export default function App() {
                     <button
                         onClick={toggleFavorite}
                         aria-pressed={contact.isFavorite}
-                        aria-label={contact.isFavorite ? "Remove from favorites" :"Add to favorites"}
+                        aria-label={contact.isFavorite ? "Remove from favorites" : "Add to favorites"}
                         className="favorite-button"
                     >
                         <img
                             src={contact.isFavorite ? starFilled : starEmpty}
-                            alt={contact.isFavorite ? "filled star icon" :"empty star icon"}
+                            alt={contact.isFavorite ? "filled star icon" : "empty star icon"}
                             className="favorite"
                         />
                     </button>
