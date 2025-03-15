@@ -1,11 +1,22 @@
 import './css/Main.css'
+import { useState } from 'react'
 export default function Main() {
-    return(
+    const [ingredients, setIngredients] = useState([]);
+    const ingredientListItems = ingredients.map((ingredient, index) => (<li key={index}>{ingredient}</li>));
+    function handleSubmit(event) {
+        event.preventDefault();
+        const newIngredient = new FormData(event.currentTarget).get('ingredient');
+        setIngredients(prevIngredients => [...prevIngredients, newIngredient]);
+    }
+    return (
         <main>
-            <form className="add-bar">
-                <input className='add-bar-input' type='text' placeholder="e.g. oregano" aria-label='Add ingredient'/>
+            <form className="add-bar" onSubmit={handleSubmit}>
+                <input className='add-bar-input' type='text' name="ingredient" placeholder="e.g. oregano" aria-label='Add ingredient' />
                 <button className='add-bar-button'>Add ingredient</button>
             </form>
+            <ul>
+                {ingredientListItems}
+            </ul>
         </main>
     )
 }
