@@ -1,5 +1,5 @@
 import './css/Main.css'
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import Recipe from './Recipe';
 import IngredientsList from './IngredientsList';
 import { getRecipeFromMistral } from '../utils/ai.js'
@@ -18,13 +18,20 @@ export default function Main() {
         const data = await getRecipeFromMistral(ingredients);
         setRecipe(data);
     }
+
+    const recipeSection = useRef(null);
+    useEffect(() => {
+        if (recipe && recipeSection.current) {
+            recipeSection.current.scrollIntoView();
+        }
+    }, [recipe]);
     return (
         <main className='main-container'>
             <form className="add-bar" action={addIngredient}>
                 <input className='add-bar-input' type='text' name="ingredient" placeholder="e.g. oregano" aria-label='Add ingredient' />
                 <button className='add-bar-button'>Add ingredient</button>
             </form>
-            {ingredientsListItems.length > 0 ? <IngredientsList ingredientsListItems={ingredientsListItems} getRecipe={getRecipe} ingredients={ingredients} /> : null}
+            {ingredientsListItems.length > 0 ? <IngredientsList ingredientsListItems={ingredientsListItems} getRecipe={getRecipe} ingredients={ingredients} ref={recipeSection} /> : null}
             {recipe ? <Recipe recipe={recipe} /> : null}
         </main>
     )
