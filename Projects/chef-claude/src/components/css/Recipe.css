@@ -1,0 +1,24 @@
+.recommend-section {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* copied */
+.suggested-recipe-container {
+    /* added by C_11nJxx */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* added by C_11nJxx */
+    color: #475467;
+    line-height: 28px;
+    font-size: 1.125rem;
+    font-weight: 400;
+}
+
+.suggested-recipe-container ul li, .suggested-recipe-container ol li {
+    margin-bottom: 8px;
+}
+/* copied */
