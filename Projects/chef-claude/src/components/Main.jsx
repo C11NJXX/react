@@ -22,7 +22,9 @@ export default function Main() {
     const recipeSection = useRef(null);
     useEffect(() => {
         if (recipe && recipeSection.current) {
-            recipeSection.current.scrollIntoView();
+            recipeSection.current.scrollIntoView({
+                behavior: "smooth"
+            });
         }
     }, [recipe]);
     return (
