@@ -6,6 +6,12 @@ export default function Main() {
         topText: "One does not simply",
         bottomText: "Walk into Mordor"
     });
+
+    function handleChange(event) {
+        const { value } = event.currentTarget;
+        setMeme(prevMeme => ({ ...prevMeme, topText: value }))
+    }
+
     return (
         <main>
             <div className="form">
@@ -14,6 +20,7 @@ export default function Main() {
                         type="text"
                         placeholder="One does not simply"
                         name="topText"
+                        onChange={handleChange}
                     />
                 </label>
 
