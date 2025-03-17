@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import './App.css'
 import Die from './components/Die'
 import random, { randomNumber } from './utils/random'
@@ -31,7 +31,14 @@ export default function App() {
             }} />
     });
 
-    const { width, height } = useWindowSize()
+    const { width, height } = useWindowSize();
+
+    const newGameButton = useRef(null);
+    useEffect(() => {
+        if (gameWon) {
+            newGameButton.current.focus();
+        }
+    }, [gameWon])
 
     return (
         <main className="main-container">
@@ -47,7 +54,7 @@ export default function App() {
             <div className='dies-container'>
                 {diceElements}
             </div>
-            <button className='toll-button' onClick={gameWon ? newGame : roll}>
+            <button className='toll-button' onClick={gameWon ? newGame : roll} ref={gameWon ? newGameButton : undefined}>
                 {gameWon ? 'New Game' : 'Roll'}
             </button>
         </main>
