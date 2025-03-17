@@ -17,6 +17,10 @@ export default function App() {
         setDies(oldDies => oldDies.map(oldDie => oldDie.isHeld === false ? { ...oldDie, value: randomNumber() } : oldDie));
     }
 
+    function newGame() {
+        setDies(random());
+    }
+
     const diceElements = dies.map((die) => {
         return <Die
             key={die.id}
@@ -40,7 +44,7 @@ export default function App() {
             <div className='dies-container'>
                 {diceElements}
             </div>
-            <button className='toll-button' onClick={roll}>
+            <button className='toll-button' onClick={gameWon ? newGame : roll}>
                 {gameWon ? 'New Game' : 'Roll'}
             </button>
         </main>
