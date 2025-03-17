@@ -7,7 +7,7 @@ import { useWindowSize } from 'react-use'
 import Confetti from 'react-confetti'
 
 export default function App() {
-    const [dies, setDies] = useState(random());
+    const [dies, setDies] = useState(random);
     let gameWon = dies.every(die => die.isHeld) && dies.every(die => die.value === dies[0].value);
     function hold(id) {
         setDies(oldDies => oldDies.map(oldDie => oldDie.id === id ? { ...oldDie, isHeld: !oldDie.isHeld } : oldDie));
