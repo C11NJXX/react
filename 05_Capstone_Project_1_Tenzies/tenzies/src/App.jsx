@@ -5,8 +5,18 @@ import random from './utils/random'
 
 export default function App() {
     const [dies, setDies] = useState(random());
+    function hold(id) {
+        console.log(id);
+    }
+
     const diceElements = dies.map((die) => {
-        return <Die key={die.id} value={die.value} isHeld={die.isHeld}/>
+        return <Die
+            key={die.id}
+            value={die.value}
+            isHeld={die.isHeld}
+            hold={() => {
+                hold(die.id)
+            }} />
     });
     return (
         <main className="main-container">
