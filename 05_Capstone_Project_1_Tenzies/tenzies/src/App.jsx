@@ -6,7 +6,7 @@ import random from './utils/random'
 export default function App() {
     const [dies, setDies] = useState(random());
     function hold(id) {
-        console.log(id);
+        setDies(oldDies => oldDies.map(oldDie => oldDie.id === id ? { ...oldDie, isHeld: !oldDie.isHeld } : oldDie));
     }
 
     const diceElements = dies.map((die) => {
