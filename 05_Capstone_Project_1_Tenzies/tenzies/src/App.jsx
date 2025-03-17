@@ -4,18 +4,17 @@ import Die from './components/Die'
 import random from './utils/random'
 
 export default function App() {
-    function mapRandomArr() {
-        return random().map(obj => <Die key={obj.id} value={obj.value} isHeld={obj.isHeld}/>);
-    }
-    const [dies, setDies] = useState(mapRandomArr());
-
+    const [dies, setDies] = useState(random());
+    const diceElements = dies.map((die) => {
+        return <Die key={die.id} value={die.value} isHeld={die.isHeld}/>
+    });
     return (
         <main className="main-container">
             <div className='dies-container'>
-                {dies}
+                {diceElements}
             </div>
             <button className='toll-button' onClick={() => {
-                setDies(mapRandomArr())
+                setDies(random())
             }}>
                 Roll
             </button>
