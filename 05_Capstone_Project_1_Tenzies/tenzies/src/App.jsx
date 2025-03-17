@@ -4,14 +4,18 @@ import Die from './components/Die'
 import random from './utils/random'
 
 export default function App() {
-    const [dies, setDies] = useState(random().map((value, index) => <Die key={index} value={value} />));
+    function mapRandomArr() {
+        return random().map(obj => <Die key={obj.id} value={obj.value} isHeld={obj.isHeld}/>);
+    }
+    const [dies, setDies] = useState(mapRandomArr());
+
     return (
         <main className="main-container">
             <div className='dies-container'>
                 {dies}
             </div>
             <button className='toll-button' onClick={() => {
-                setDies(random().map((value, index) => <Die key={index} value={value} />))
+                setDies(mapRandomArr())
             }}>
                 Roll
             </button>
