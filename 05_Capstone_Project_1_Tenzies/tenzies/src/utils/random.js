@@ -5,9 +5,13 @@ export default function random() {
     for (let i = 0; i < 10; i++) {
         randomArr.push({
             id: nanoid(),
-            value: Math.floor(Math.random() * 6) + 1,
+            value: randomNumber(),
             isHeld: false
         });
     }
     return randomArr;
+}
+
+export function randomNumber() {
+    return Math.floor(Math.random() * 6) + 1;
 }
