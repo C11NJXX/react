@@ -10,6 +10,11 @@ export default function App() {
             <div className='dies-container'>
                 {dies}
             </div>
+            <button className='toll-button' onClick={() => {
+                setDies(random().map((value, index) => <Die key={index} value={value} />))
+            }}>
+                Roll
+            </button>
         </main>
     )
 }
