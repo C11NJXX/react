@@ -2,4 +2,12 @@
     background-color: #F5F5F5;
     height: 100%;
     border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.dies-container {
+    display: grid;
+    grid-template: auto auto / repeat(5, 1fr);
+    gap: 20px;
 }
