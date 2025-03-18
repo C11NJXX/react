@@ -2,7 +2,7 @@ import './css/KeyBoard.css'
 import { clsx } from 'clsx';
 export default function KeyBoard(props) {
 
-    const { currentWord, guessedLetters, addGuessedLetter } = props;
+    const { currentWord, guessedLetters, addGuessedLetter, isGameOver } = props;
     const keyBoardLetters = 'abcdefghijklmnopqrstuvwxyz'.toUpperCase();
     const keyBoardLettersArray = keyBoardLetters.split('');
 
@@ -21,7 +21,7 @@ export default function KeyBoard(props) {
                 key={letter}
                 className={`keyboard-plain ${className}`}
                 onClick={() => {
-                    addGuessedLetter(letter);
+                    !isGameOver && addGuessedLetter(letter)
                 }}
             >
                 {letter}
