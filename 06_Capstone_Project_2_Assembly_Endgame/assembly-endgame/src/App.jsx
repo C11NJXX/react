@@ -7,6 +7,7 @@ import KeyBoard from "./components/KeyBoard"
 import NewGame from "./components/NewGame"
 import './App.css'
 export default function Hangman() {
+  const [currentWord, setCurrentWord] = useState('REACT');
   const [guessedLetters, setGuessedLetters] = useState([]);
   function addGuessedLetter(letter) {
     setGuessedLetters(prev => (prev.includes(letter) ? prev : [...prev, letter]))
@@ -16,8 +17,8 @@ export default function Hangman() {
       <Header />
       <Status />
       <List />
-      <Spell />
-      <KeyBoard addGuessedLetter={addGuessedLetter} />
+      <Spell currentWord={currentWord} />
+      <KeyBoard currentWord={currentWord} guessedLetters={guessedLetters} addGuessedLetter={addGuessedLetter} />
       <NewGame />
     </main>
   )
