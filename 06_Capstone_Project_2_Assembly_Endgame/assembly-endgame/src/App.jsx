@@ -14,7 +14,7 @@ export default function App() {
   //Derived values
   const wrongGuess = guessedLetters.filter(guessedLetter => !currentWord.includes(guessedLetter)).length;
   const isGameWon = currentWord.split('').every(letter => guessedLetters.includes(letter));
-  const isGameLost = wrongGuess <= currentWord.length ? false : true;
+  const isGameLost = wrongGuess <= 7 ? false : true;
   const isGameOver = isGameWon || isGameLost;
   function addGuessedLetter(letter) {
     setGuessedLetters(prev => (prev.includes(letter) ? prev : [...prev, letter]))
@@ -22,11 +22,11 @@ export default function App() {
   return (
     <main className="main-container">
       <Header />
-      <Status />
+      <Status isGameWon={isGameWon} isGameLost={isGameLost} />
       <List wrongGuess={wrongGuess} />
       <Spell currentWord={currentWord} guessedLetters={guessedLetters} />
       <KeyBoard currentWord={currentWord} guessedLetters={guessedLetters} addGuessedLetter={addGuessedLetter} />
-      <NewGame isGameOver={isGameOver}/>
+      <NewGame isGameOver={isGameOver} />
     </main>
   )
 }
