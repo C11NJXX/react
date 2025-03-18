@@ -6,7 +6,7 @@
 .status-container>div {
     margin-top: 10px;
     width: 330px;
-    height: 90px;
+    height: 70px;
     display: flex;
     flex-direction: column;
     align-items: center;

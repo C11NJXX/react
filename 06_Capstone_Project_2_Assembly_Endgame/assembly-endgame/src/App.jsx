@@ -3,6 +3,7 @@ import Header from "./components/Header"
 import Status from "./components/Status"
 import List from './components/List'
 import Spell from "./components/Spell"
+import KeyBoard from "./components/KeyBoard"
 import './App.css'
 export default function Hangman() {
   return (
@@ -11,6 +12,7 @@ export default function Hangman() {
       <Status />
       <List />
       <Spell />
+      <KeyBoard />
     </main>
   )
 }
