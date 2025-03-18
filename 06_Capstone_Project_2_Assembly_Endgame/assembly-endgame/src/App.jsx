@@ -17,7 +17,7 @@ export default function Hangman() {
       <Header />
       <Status />
       <List />
-      <Spell currentWord={currentWord} />
+      <Spell currentWord={currentWord} guessedLetters={guessedLetters} />
       <KeyBoard currentWord={currentWord} guessedLetters={guessedLetters} addGuessedLetter={addGuessedLetter} />
       <NewGame />
     </main>
