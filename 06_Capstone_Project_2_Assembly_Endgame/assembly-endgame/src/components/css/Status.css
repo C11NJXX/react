@@ -1,0 +1,36 @@
+.status-container {
+    display: flex;
+    justify-content: center;
+}
+
+.status-container>div {
+    margin-top: 10px;
+    width: 330px;
+    height: 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    border-radius: 35px;
+    background-color: #10A95B;
+}
+
+.status-result {
+    font-family: Hanken Grotesk;
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    margin: 0;
+}
+
+.status-result-text {
+    font-family: Hanken Grotesk;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    margin: 0;
+}
