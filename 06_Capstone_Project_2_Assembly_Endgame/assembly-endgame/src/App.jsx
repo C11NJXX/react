@@ -20,7 +20,7 @@ export default function App() {
     <main className="main-container">
       <Header />
       <Status />
-      <List />
+      <List wrongGuess={wrongGuess}/>
       <Spell currentWord={currentWord} guessedLetters={guessedLetters} />
       <KeyBoard currentWord={currentWord} guessedLetters={guessedLetters} addGuessedLetter={addGuessedLetter} />
       <NewGame />
