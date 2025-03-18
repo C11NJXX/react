@@ -6,8 +6,6 @@ export default function KeyBoard(props) {
     const keyBoardLetters = 'abcdefghijklmnopqrstuvwxyz'.toUpperCase();
     const keyBoardLettersArray = keyBoardLetters.split('');
 
-
-
     const keyBoardElement = keyBoardLettersArray.map(letter => {
         const isGuessed = guessedLetters.includes(letter);
         const isCorrect = isGuessed && currentWord.includes(letter);

@@ -8,9 +8,10 @@ import NewGame from "./components/NewGame"
 import './App.css'
 
 import languages from './data/languages.js'
+import getRandomWord from './data/words.js'
 export default function App() {
   //StateValue
-  const [currentWord, setCurrentWord] = useState('REACT');
+  const [currentWord, setCurrentWord] = useState(getRandomWord);
   const [guessedLetters, setGuessedLetters] = useState([]);
 
   //Derived values
@@ -25,7 +26,7 @@ export default function App() {
   return (
     <main className="main-container">
       <Header />
-      <Status isGameWon={isGameWon} isGameLost={isGameLost} isGameOver={isGameOver} isLatestLetterCorrect={isLatestLetterCorrect} currentLanguage={languages[wrongGuess-1]} wrongGuess={wrongGuess}/>
+      <Status isGameWon={isGameWon} isGameLost={isGameLost} isGameOver={isGameOver} isLatestLetterCorrect={isLatestLetterCorrect} currentLanguage={languages[wrongGuess - 1]} wrongGuess={wrongGuess} />
       <List wrongGuess={wrongGuess} />
       <Spell currentWord={currentWord} guessedLetters={guessedLetters} />
       <KeyBoard currentWord={currentWord} guessedLetters={guessedLetters} addGuessedLetter={addGuessedLetter} isGameOver={isGameOver} />

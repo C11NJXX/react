@@ -8,7 +8,6 @@ export default function Status(props) {
     for (let i = 0; i < wrongGuess; i++) {
         eliminatedLanguages += `${languages[i].name} `
     }
-    console.log(eliminatedLanguages)
     return (
         <section className='status-container'>
             <div className={`status-color ${clsx({ ['status-color-won']: isGameWon, ['status-color-lost']: isGameLost })}`}>

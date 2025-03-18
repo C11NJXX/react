@@ -2,6 +2,7 @@ import { nanoid } from "nanoid";
 import './css/Spell.css'
 export default function Spell(props) {
     const { currentWord, guessedLetters } = props;
+    console.log(currentWord)
     const currentWordArray = currentWord.split('');
     const currentWordElement = currentWordArray.map(letter => {
         const isGuessed = guessedLetters.includes(letter);
