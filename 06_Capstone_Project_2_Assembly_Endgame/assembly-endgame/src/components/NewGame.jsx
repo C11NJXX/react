@@ -1,7 +1,8 @@
 import './css/NewGame.css'
-export default function NewGame() {
+export default function NewGame(props) {
+    const { isGameOver } = props;
     return (
-        <button className='new-game-button'>
+        isGameOver && <button className='new-game-button'>
             New Game
         </button>
     )
