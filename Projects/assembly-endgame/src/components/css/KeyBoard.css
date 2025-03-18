@@ -1,0 +1,32 @@
+.keyboard-container {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    max-width: 950px;
+    justify-content: center;
+}
+
+.keyboard-plain {
+    width: 70px;
+    height: 70px;
+    border-radius: 10px;
+    padding: 6px;
+    border-width: 1px;
+    background-color: #FCBA29;
+    border: 1px solid #D7D7D7;
+    font-family: "Hanken Grotesk";
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+}
+
+.keyboard-correct {
+    background-color: #10A95B;
+}
+
+.keyboard-wrong {
+    background-color: #EC5D49;
+}
