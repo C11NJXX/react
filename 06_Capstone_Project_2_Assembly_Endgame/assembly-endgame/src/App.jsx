@@ -28,9 +28,9 @@ export default function App() {
       <Header />
       <Status isGameWon={isGameWon} isGameLost={isGameLost} isGameOver={isGameOver} isLatestLetterCorrect={isLatestLetterCorrect} currentLanguage={languages[wrongGuess - 1]} wrongGuess={wrongGuess} />
       <List wrongGuess={wrongGuess} />
-      <Spell currentWord={currentWord} guessedLetters={guessedLetters} />
+      <Spell currentWord={currentWord} guessedLetters={guessedLetters} isGameLost={isGameLost}/>
       <KeyBoard currentWord={currentWord} guessedLetters={guessedLetters} addGuessedLetter={addGuessedLetter} isGameOver={isGameOver} />
-      <NewGame isGameOver={isGameOver} />
+      <NewGame isGameOver={isGameOver} setCurrentWord={setCurrentWord} setGuessedLetters={setGuessedLetters}/>
     </main>
   )
 }

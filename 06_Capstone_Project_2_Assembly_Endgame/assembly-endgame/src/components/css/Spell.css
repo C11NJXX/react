@@ -8,3 +8,31 @@
     line-height: 100%;
     letter-spacing: 0%;
 }
+
+
+
+.spell-correct,
+.spell-base {
+    width: 60px;
+    height: 60px;
+    padding: 8px;
+    padding-top: 15px;
+    background-color: #323232;
+    font-size: 30px;
+    margin-right: 3px;
+    border-bottom: 1px solid #F9F4DA;
+    border-bottom-width: 1px;
+}
+
+.spell-wrong {
+    width: 60px;
+    height: 60px;
+    padding: 8px;
+    padding-top: 15px;
+    background-color: #323232;
+    font-size: 30px;
+    margin-right: 3px;
+    border-bottom: 1px solid #F9F4DA;
+    border-bottom-width: 1px;
+    color: red
+}

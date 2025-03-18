@@ -1,26 +1,24 @@
 import { nanoid } from "nanoid";
+import clsx from "clsx";
 import './css/Spell.css'
 export default function Spell(props) {
-    const { currentWord, guessedLetters } = props;
+    const { currentWord, guessedLetters, isGameLost } = props;
     console.log(currentWord)
     const currentWordArray = currentWord.split('');
     const currentWordElement = currentWordArray.map(letter => {
         const isGuessed = guessedLetters.includes(letter);
         const isCorrect = isGuessed && currentWord.includes(letter);
+        const className = clsx({ ['spell-correct']: isCorrect, ['spell-wrong']: (isGameLost && !isCorrect) })
         return (
-            <span key={nanoid()} style={{
-                width: '60px',
-                height: '60px',
-                padding: '8px',
-                paddingTop: '15px',
-                backgroundColor: '#323232',
-                fontSize: '30px',
-                marginRight: '3px',
-                borderBottom: ' 1px solid #F9F4DA',
-                borderBottomWidth: '1px'
-            }}>
-                {isCorrect ? letter : ''}
-            </span >
+            isGameLost ?
+                isCorrect ? <span key={nanoid()} className={`spell-base ${className}`}>
+                    {letter}
+                </span > : <span key={nanoid()} className={`spell-base ${className}`}>
+                    {letter}
+                </span >
+                : <span key={nanoid()} className={`spell-base ${className}`}>
+                    {isCorrect ? letter : ''}
+                </span >
         )
     });
 
