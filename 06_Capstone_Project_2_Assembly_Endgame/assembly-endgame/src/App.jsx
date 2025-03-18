@@ -6,9 +6,13 @@ import Spell from "./components/Spell"
 import KeyBoard from "./components/KeyBoard"
 import NewGame from "./components/NewGame"
 import './App.css'
-export default function Hangman() {
+export default function App() {
+  //StateValue
   const [currentWord, setCurrentWord] = useState('REACT');
   const [guessedLetters, setGuessedLetters] = useState([]);
+
+  //Derived values
+  const wrongGuess = guessedLetters.filter(guessedLetter => !currentWord.includes(guessedLetter)).length;
   function addGuessedLetter(letter) {
     setGuessedLetters(prev => (prev.includes(letter) ? prev : [...prev, letter]))
   }
