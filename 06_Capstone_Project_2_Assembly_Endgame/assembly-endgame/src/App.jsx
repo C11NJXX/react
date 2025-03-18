@@ -25,7 +25,7 @@ export default function App() {
   return (
     <main className="main-container">
       <Header />
-      <Status isGameWon={isGameWon} isGameLost={isGameLost} isGameOver={isGameOver} isLatestLetterCorrect={isLatestLetterCorrect} currentLanguage={languages[wrongGuess-1]} />
+      <Status isGameWon={isGameWon} isGameLost={isGameLost} isGameOver={isGameOver} isLatestLetterCorrect={isLatestLetterCorrect} currentLanguage={languages[wrongGuess-1]} wrongGuess={wrongGuess}/>
       <List wrongGuess={wrongGuess} />
       <Spell currentWord={currentWord} guessedLetters={guessedLetters} />
       <KeyBoard currentWord={currentWord} guessedLetters={guessedLetters} addGuessedLetter={addGuessedLetter} isGameOver={isGameOver} />
